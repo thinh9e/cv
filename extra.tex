@@ -1,8 +1,8 @@
-\usepackage[utf8]{vietnam}
+\usepackage[utf8]{inputenc}
 \usepackage[margin=10mm]{geometry}
 \usepackage{array,color,enumitem,graphicx,hyperref,tikz}
-%\usepackage[draft]{flowfram}
 \usepackage{flowfram}
+\usepackage[none]{hyphenat}
 
 % Config style
 \renewcommand{\familydefault}{\sfdefault}
@@ -12,22 +12,16 @@
 
 % Define color
 \definecolor{royalblue}{RGB}{65,105,225}
-\definecolor{gray}{RGB}{128,128,128}
+\definecolor{gray}{RGB}{100,100,100}
 
 % Define structure
-\newflowframe{.65\textwidth}{.9\textheight} {.35\textwidth}{0pt}
+\newflowframe{.65\textwidth}{\textheight} {.35\textwidth}{0pt}
 \newdynamicframe{.65\textwidth}{.05\textheight} {.35\textwidth}{.95\textheight}[head]
 \newdynamicframe{.3\textwidth}{.15\textheight} {0pt}{.85\textheight}[avt]
 \newdynamicframe{.3\textwidth}{.85\textheight} {0pt}{0pt}[left]
 \newdynamicframe{.675\textwidth}{.05\textheight} {.325\textwidth}{.9\textheight}[hline]
 \newdynamicframe{.05\textwidth}{\textheight} {.3\textwidth}{0pt}[vline]
 
-% Horizontal line
-\begin{dynamiccontents*}{hline}
-	\vspace{7mm}
-	\hspace{.5mm}
-	\tikz{\draw[royalblue,line width=1.5pt,loosely dotted] (0,0) -- (.67\textwidth,0);}
-\end{dynamiccontents*}
 % Vertical line
 \begin{dynamiccontents*}{vline}
 	\hspace{3mm}
@@ -35,14 +29,6 @@
 \end{dynamiccontents*}
 
 % Define new command
-% Head frame
-\newcommand{\Head}[1]{
-    \begin{dynamiccontents*}{head}
-        \begin{flushright}
-            \Huge\textbf{#1}
-        \end{flushright}
-    \end{dynamiccontents*}
-}
 % Avatar frame
 \newcommand{\Avt}[1]{
     \begin{dynamiccontents*}{avt}
@@ -76,4 +62,4 @@
 % Time Title content
 \newcommand{\TTcont}[2]{\color{gray}#1 & #2 \\}
 % Description content
-\newcommand{\Dcont}[1]{& \textit{\small\color{gray}#1} \\}
+\newcommand{\Dcont}[1]{& \small{\color{gray}#1} \\}
